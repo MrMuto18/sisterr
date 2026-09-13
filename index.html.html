@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>شكراً من القلب لأحلى أخت ❤️</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          cream: "#FBF2E6",
+          rose: {
+            50: "#FDF1F3",
+            100: "#FADDE2",
+            200: "#F3B9C4",
+            300: "#E890A0",
+            400: "#D96B80",
+            500: "#C4577A",
+            600: "#A83F63",
+            700: "#872E4E",
+          },
+          amber: {
+            100: "#FBE7C6",
+            200: "#F5D08D",
+            300: "#EFB85B",
+            400: "#E8A93B",
+            500: "#D9922A",
+          },
+          plum: "#4A2A38",
+        },
+        fontFamily: {
+          display: ["Lalezar", "cursive"],
+          body: ["Tajawal", "sans-serif"],
+        },
+      },
+    },
+  };
+</script>
+
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.3.1",
+    "react-dom/client": "https://esm.sh/react-dom@18.3.1/client",
+    "framer-motion": "https://esm.sh/framer-motion@11.3.19?deps=react@18.3.1,react-dom@18.3.1",
+    "lucide-react": "https://esm.sh/lucide-react@0.383.0?deps=react@18.3.1,react-dom@18.3.1",
+    "canvas-confetti": "https://esm.sh/canvas-confetti@1.9.3"
+  }
+}
+</script>
+
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<style>
+  html, body { margin:0; padding:0; }
+  body {
+    font-family: 'Tajawal', sans-serif;
+    background: #FBF2E6;
+    overflow-x: hidden;
+  }
+  ::selection { background: #F3B9C4; color: #4A2A38; }
+  .font-display { font-family: 'Lalezar', cursive; }
+  ::-webkit-scrollbar { width: 10px; }
+  ::-webkit-scrollbar-track { background: #FBF2E6; }
+  ::-webkit-scrollbar-thumb { background: #E890A0; border-radius: 10px; }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div id="root"></div>
+
+<script type="text/babel" data-type="module" data-presets="react">
+import React, { useState, useEffect, useCallback, useRef } from "react";
+import { createRoot } from "react-dom/client";
+import { motion, AnimatePresence } from "framer-motion";
+import confetti from "canvas-confetti";
+import {
+  Heart,
+  Flower2,
+  Star,
+  Coffee,
+  Sparkles,
+  Sun,
+  Gift,
+  Image as ImageIcon,
+  MessageCircleHeart,
+  MoveDown,
+} from "lucide-react";
+
+function FloatingHearts({ hearts, onDone }) {
+  return (
+    <div className="pointer-events-none fixed inset-0 z-[60] overflow-hidden">
+      <AnimatePresence>
+        {hearts.map((h) => (
+          <motion.div
+            key={h.id}
+            initial={{ opacity: 0, y: "100vh", x: h.x, scale: h.scale, rotate: h.rotateStart }}
+            animate={{ opacity: [0, 1, 1, 0], y: "-15vh", rotate: h.rotateEnd }}
+            transition={{ duration: h.duration, ease: "easeOut", delay: h.delay }}
+            onAnimationComplete={() => onDone(h.id)}
+            className="absolute bottom-0"
+            style={{ left: h.x }}
+          >
+            <Heart
+              fill={h.color}
+              stroke={h.color}
+              className="drop-shadow-md"
+              style={{ width: h.size, height: h.size }}
+            />
+          </motion.div>
+        ))}
+      </AnimatePresence>
+    </div>
+  );
+}
+
+function SectionHeading({ eyebrow, title, subtitle }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.4 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="text-center max-w-2xl mx-auto mb-14"
+    >
+      <h2 className="font-display text-4xl md:text-5xl text-rose-600 mb-4 leading-relaxed">
+        {title}
+      </h2>
+      {subtitle && (
+        <p className="text-plum/70 text-lg leading-loose">{subtitle}</p>
+      )}
+    </motion.div>
+  );
+}
+
+const gratitudeCards = [
+  {
+    icon: Coffee,
+    title: "قمت من الصباح الباكر",
+    text: "من أول ساعات النهار وأنتِ واقفة، تحضري وترتبي وتخدمي بلا ما تشتكي من التعب.",
+    color: "bg-amber-100 text-amber-500",
+  },
+  {
+    icon: Heart,
+    title: "صبر ما يتوصفش",
+    text: "تحملتيني في أصعب اللحظات، وضلّيتي هادية ومبتسمة رغم كل الضغط.",
+    color: "bg-rose-100 text-rose-500",
+  },
+  {
+    icon: Star,
+    title: "مجهود يستحق كل التقدير",
+    text: "من الصباح للعشية، وقتك كله كان موهوب من أجلي، بلا حساب وبلا مقابل.",
+    color: "bg-amber-100 text-amber-500",
+  },
+  {
+    icon: Flower2,
+    title: "لمسة حنان صغيرة",
+    text: "ما نسيتيش تسقسيني كيفاش حالتي، وسط كل هالتعب لقيتي وقت تحسي بيا.",
+    color: "bg-rose-100 text-rose-500",
+  },
+  {
+    icon: Sparkles,
+    title: "كل التفاصيل الصغيرة",
+    text: "الأشياء اللي عملتيها وحتى ما نتفطنولها، كل وحدة منها زادتني أمان وراحة بال.",
+    color: "bg-amber-100 text-amber-500",
+  },
+];
+
+const thankYouMessages = [
+  "ربي يخليك ليا يا روحي، ونتي أعز ما عندي.",
+  "يعطيك الصحة على كل نقطة تعب حسيت بيها اليوم من أجلي.",
+  "ديما واشفتها معايا، ما خليتني نحس بالوحدة حتى لحظة.",
+  "من دون ما تحكي، نعرف قداه تعبت وقداه حبك كبير.",
+  "الله يجازيك عليا بكل خير، في الدنيا وفي كل حاجة تتمنيها.",
+  "نتي موش بس أختي، نتي سندي في كل وقت صعيب.",
+];
+
+function ThankYouCard({ message, index }) {
+  const [flipped, setFlipped] = useState(false);
+  return (
+    <motion.button
+      onClick={() => setFlipped((f) => !f)}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.5, delay: index * 0.05 }}
+      className="relative h-48 w-full [perspective:1200px] text-right"
+    >
+      <motion.div
+        animate={{ rotateY: flipped ? 180 : 0 }}
+        transition={{ duration: 0.6, ease: "easeInOut" }}
+        className="relative h-full w-full [transform-style:preserve-3d]"
+      >
+        <div
+          className="absolute inset-0 flex flex-col items-center justify-center gap-3 rounded-2xl bg-white/70 border border-rose-200 shadow-sm p-6 [backface-visibility:hidden]"
+        >
+          <MessageCircleHeart className="w-8 h-8 text-rose-400" />
+          <p className="text-plum/60 text-sm">اضغطي باش تشوفي الرسالة</p>
+        </div>
+        <div
+          className="absolute inset-0 flex items-center justify-center rounded-2xl bg-gradient-to-br from-rose-400 to-amber-400 p-6 text-center [backface-visibility:hidden]"
+          style={{ transform: "rotateY(180deg)" }}
+        >
+          <p className="text-white font-medium leading-loose text-base">
+            {message}
+          </p>
+        </div>
+      </motion.div>
+    </motion.button>
+  );
+}
+
+const galleryItems = [
+  { caption: "ضحكتنا اللي ما تنسنا", from: "from-rose-200", to: "to-amber-100" },
+  { caption: "أيامنا الحلوة سوا", from: "from-amber-100", to: "to-rose-100" },
+  { caption: "لحظات محفورة فينا", from: "from-rose-100", to: "to-rose-300" },
+  { caption: "سهراتنا الطويلة", from: "from-amber-200", to: "to-amber-50" },
+  { caption: "حكايتنا اللي ما تخلص", from: "from-rose-300", to: "to-amber-100" },
+  { caption: "أحلى الذكريات", from: "from-amber-100", to: "to-rose-200" },
+];
+
+function App() {
+  const [hearts, setHearts] = useState([]);
+  const [surprise, setSurprise] = useState(false);
+  const heartIdRef = useRef(0);
+
+  const launchHearts = useCallback(() => {
+    const colors = ["#C4577A", "#E890A0", "#E8A93B", "#F5D08D"];
+    const newHearts = Array.from({ length: 22 }).map(() => {
+      heartIdRef.current += 1;
+      return {
+        id: heartIdRef.current,
+        x: `${Math.random() * 90 + 3}vw`,
+        size: 18 + Math.random() * 26,
+        duration: 2.4 + Math.random() * 1.6,
+        delay: Math.random() * 0.6,
+        scale: 0.6 + Math.random() * 0.6,
+        rotateStart: Math.random() * 40 - 20,
+        rotateEnd: Math.random() * 60 - 30,
+        color: colors[Math.floor(Math.random() * colors.length)],
+      };
+    });
+    setHearts((prev) => [...prev, ...newHearts]);
+  }, []);
+
+  const removeHeart = useCallback((id) => {
+    setHearts((prev) => prev.filter((h) => h.id !== id));
+  }, []);
+
+  const launchSurprise = useCallback(() => {
+    setSurprise(true);
+    const colors = ["#C4577A", "#E890A0", "#E8A93B", "#F5D08D", "#FBE7C6"];
+    const duration = 2200;
+    const end = Date.now() + duration;
+
+    (function frame() {
+      confetti({
+        particleCount: 4,
+        angle: 60,
+        spread: 65,
+        origin: { x: 0, y: 0.7 },
+        colors,
+      });
+      confetti({
+        particleCount: 4,
+        angle: 120,
+        spread: 65,
+        origin: { x: 1, y: 0.7 },
+        colors,
+      });
+      if (Date.now() < end) requestAnimationFrame(frame);
+    })();
+
+    confetti({
+      particleCount: 140,
+      spread: 100,
+      origin: { y: 0.6 },
+      colors,
+      startVelocity: 45,
+    });
+  }, []);
+
+  return (
+    <div className="relative">
+      <FloatingHearts hearts={hearts} onDone={removeHeart} />
+
+      <section className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden bg-gradient-to-b from-rose-100 via-cream to-cream">
+        <div className="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-rose-200/50 blur-3xl" />
+        <div className="absolute -bottom-24 -left-24 w-72 h-72 rounded-full bg-amber-200/50 blur-3xl" />
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="relative z-10 text-center max-w-3xl"
+        >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.7 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mx-auto mb-6 w-16 h-16 rounded-full bg-rose-500 flex items-center justify-center shadow-lg shadow-rose-300"
+          >
+            <Heart className="text-white w-8 h-8" fill="white" />
+          </motion.div>
+
+          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl text-plum leading-relaxed mb-6">
+            شكراً من القلب لأحلى وأغلى أخت في الدنيا ❤️
+          </h1>
+
+          <p className="text-plum/70 text-lg md:text-xl leading-loose mb-10">
+            نعرف قداه تعبتي اليوم من أجلي، وقداه عطيتي من وقتك وجهدك بلا ما تفكري
+            حتى في روحك. هذا الموقع الصغير موش كافي باش يوفّي حقك، لكن حبيت
+            نقلك بيه: نحبك بزاف، ونتقدرك أكثر ممّا تتخيلي.
+          </p>
+
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={launchHearts}
+            className="inline-flex items-center gap-2 bg-rose-500 hover:bg-rose-600 text-white font-medium text-lg px-8 py-4 rounded-full shadow-lg shadow-rose-300 transition-colors"
+          >
+            <Heart className="w-5 h-5" fill="white" />
+            أطلقي القلوب
+          </motion.button>
+
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+            className="mt-16 flex flex-col items-center gap-2 text-plum/40"
+          >
+            <span className="text-sm">شدّي بيا لتحت</span>
+            <MoveDown className="w-5 h-5" />
+          </motion.div>
+        </motion.div>
+      </section>
+
+      <section className="py-24 px-6 bg-cream">
+        <SectionHeading
+          title="تعبك اليوم ما يضيعش"
+          subtitle="كل دقيقة تعب حسيت بيها اليوم، إحنا حاسين بيها ومقدرينها"
+        />
+        <div className="max-w-5xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {gratitudeCards.map((card, i) => {
+            const Icon = card.icon;
+            return (
+              <motion.div
+                key={card.title}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+                className="bg-white rounded-2xl p-6 border border-rose-100 shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-4 ${card.color}`}>
+                  <Icon className="w-6 h-6" />
+                </div>
+                <h3 className="font-bold text-plum text-lg mb-2">{card.title}</h3>
+                <p className="text-plum/60 leading-loose text-sm">{card.text}</p>
+              </motion.div>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="py-24 px-6 bg-gradient-to-b from-cream to-rose-50">
+        <SectionHeading
+          title="رسائل شكر خاصة"
+          subtitle="اضغطي على كل بطاقة باش تلقاي كلمة صغيرة من قلبي ليك"
+        />
+        <div className="max-w-4xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {thankYouMessages.map((msg, i) => (
+            <ThankYouCard key={i} message={msg} index={i} />
+          ))}
+        </div>
+      </section>
+
+      <section className="py-24 px-6 bg-rose-50">
+        <SectionHeading
+          title="ذكرياتنا سوا"
+          subtitle="كل صورة هوني عندها حكاية، وكل حكاية زادتنا قرب لبعضنا"
+        />
+        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-5">
+          {galleryItems.map((item, i) => (
+            <motion.div
+              key={item.caption}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5, delay: i * 0.06 }}
+              whileHover={{ y: -4 }}
+              className={`aspect-square rounded-2xl bg-gradient-to-br ${item.from} ${item.to} flex flex-col items-center justify-center gap-3 p-4 text-center shadow-sm`}
+            >
+              <ImageIcon className="w-9 h-9 text-white/80" />
+              <p className="text-plum/70 text-sm font-medium">{item.caption}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      <section className="relative py-28 px-6 bg-gradient-to-b from-rose-50 to-rose-100 overflow-hidden">
+        <div className="absolute top-10 left-1/2 -translate-x-1/2 w-96 h-96 rounded-full bg-amber-200/30 blur-3xl" />
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.7 }}
+          className="relative z-10 max-w-2xl mx-auto text-center"
+        >
+          <Sun className="w-10 h-10 text-amber-400 mx-auto mb-6" />
+          <h2 className="font-display text-4xl md:text-5xl text-rose-600 mb-8 leading-relaxed">
+            كلمة أخيرة من قلبي ليك
+          </h2>
+          <p className="text-plum/80 text-lg leading-loose mb-6">
+            في وسط كل يوم عادي، إنتِ عندك القدرة تحوليه لشيء أحسن، بلا ما
+            تطلبي حتى شكر. اليوم بالذات، شفتك تعطي من وقتك، من جهدك، ومن
+            صبرك، بلا ما تحسبي التعب.
+          </p>
+          <p className="text-plum/80 text-lg leading-loose mb-10">
+            نحب نقلك: ما نتيش لحدك، وما تعبتيش باطل. كل حاجة عملتيها اليوم
+            محفورة فينا، ونحبك أكثر من قداه نقدر نعبرلك بيه بالكلام.
+          </p>
+
+          {!surprise ? (
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={launchSurprise}
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-rose-500 to-amber-400 text-white font-medium text-lg px-8 py-4 rounded-full shadow-lg shadow-rose-300"
+            >
+              <Gift className="w-5 h-5" />
+              اضغطي هنا لاستلام استراحتك وتكريمك المستحق
+            </motion.button>
+          ) : (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.85, y: 16 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              className="bg-white rounded-3xl border border-rose-200 shadow-lg p-8 md:p-10 text-center"
+            >
+              <Sparkles className="w-9 h-9 text-amber-400 mx-auto mb-4" />
+              <h3 className="font-display text-3xl text-rose-600 mb-4">
+                مبروك، استراحتك بدات رسمياً
+              </h3>
+              <p className="text-plum/80 leading-loose text-lg mb-2">
+                من الآن، عندك إذن رسمي تريّحي: تلفزة، شكولاطة، وصفر مسؤوليات
+                لمدة 24 ساعة كاملة.
+              </p>
+              <p className="text-plum/80 leading-loose text-lg">
+                ونتي، على فكرة، أحلى وأغلى أخت ممكن حد يتمناها في الدنيا كلها.
+              </p>
+              <p className="font-display text-2xl text-rose-500 mt-6">
+                أختك اللي تحبك بجنون
+              </p>
+            </motion.div>
+          )}
+        </motion.div>
+      </section>
+
+      <footer className="py-10 text-center text-plum/40 text-sm bg-rose-100">
+        صنع بكل حب من أجلك، لأنك تستاهلي أكثر بكثير من صفحة ويب
+      </footer>
+    </div>
+  );
+}
+
+const root = createRoot(document.getElementById("root"));
+root.render(<App />);
+</script>
+
+</body>
+</html>
