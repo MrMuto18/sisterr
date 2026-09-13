@@ -1,486 +1,1162 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>شكراً من القلب لأحلى أخت ❤️</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>شكراً لأغلى وأحن أخت في الدنيا ❤️</title>
+    <meta name="description" content="رسالة شكر وامتنان خاصة لأختي الحبيبة تقديراً لتعبها وجهدها الكبير." />
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+    <!-- Google Fonts: Tajawal & Alexandria & Amiri -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;600;700;800;900&family=Amiri:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
 
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          cream: "#FBF2E6",
-          rose: {
-            50: "#FDF1F3",
-            100: "#FADDE2",
-            200: "#F3B9C4",
-            300: "#E890A0",
-            400: "#D96B80",
-            500: "#C4577A",
-            600: "#A83F63",
-            700: "#872E4E",
-          },
-          amber: {
-            100: "#FBE7C6",
-            200: "#F5D08D",
-            300: "#EFB85B",
-            400: "#E8A93B",
-            500: "#D9922A",
-          },
-          plum: "#4A2A38",
-        },
-        fontFamily: {
-          display: ["Lalezar", "cursive"],
-          body: ["Tajawal", "sans-serif"],
-        },
-      },
-    },
-  };
-</script>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Tajawal', 'sans-serif'],
+                        display: ['Alexandria', 'sans-serif'],
+                        serif: ['Amiri', 'serif'],
+                    },
+                    colors: {
+                        warm: {
+                            50: '#fffaf5',
+                            100: '#fff4eb',
+                            200: '#ffe6d3',
+                            300: '#ffd2b2',
+                            400: '#ffb280',
+                            500: '#ff8a4c',
+                            600: '#f56323',
+                            700: '#cb4614',
+                            800: '#a33614',
+                            900: '#842f15',
+                        },
+                        roseGold: {
+                            100: '#ffe8ec',
+                            200: '#ffd0d9',
+                            300: '#fba5b5',
+                            400: '#f5718b',
+                            500: '#ea3e65',
+                            600: '#d5214d',
+                        }
+                    },
+                    animation: {
+                        'float-slow': 'float 6s ease-in-out infinite',
+                        'float-reverse': 'floatRev 7s ease-in-out infinite',
+                        'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
+                        'sparkle': 'sparkle 2s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-14px) rotate(2deg)' },
+                        },
+                        floatRev: {
+                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-18px) rotate(-3deg)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
+                            '50%': { opacity: '0.8', transform: 'scale(1.06)' },
+                        },
+                        sparkle: {
+                            '0%, 100%': { opacity: '1', transform: 'scale(1)' },
+                            '50%': { opacity: '0.4', transform: 'scale(0.85)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 
-<script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@18.3.1",
-    "react-dom/client": "https://esm.sh/react-dom@18.3.1/client",
-    "framer-motion": "https://esm.sh/framer-motion@11.3.19?deps=react@18.3.1,react-dom@18.3.1",
-    "lucide-react": "https://esm.sh/lucide-react@0.383.0?deps=react@18.3.1,react-dom@18.3.1",
-    "canvas-confetti": "https://esm.sh/canvas-confetti@1.9.3"
-  }
-}
-</script>
+    <!-- React 18 & ReactDOM -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
 
-<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- Babel Standalone for JSX compilation -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-<style>
-  html, body { margin:0; padding:0; }
-  body {
-    font-family: 'Tajawal', sans-serif;
-    background: #FBF2E6;
-    overflow-x: hidden;
-  }
-  ::selection { background: #F3B9C4; color: #4A2A38; }
-  .font-display { font-family: 'Lalezar', cursive; }
-  ::-webkit-scrollbar { width: 10px; }
-  ::-webkit-scrollbar-track { background: #FBF2E6; }
-  ::-webkit-scrollbar-thumb { background: #E890A0; border-radius: 10px; }
-  @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-      animation-duration: 0.001ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.001ms !important;
-    }
-  }
-</style>
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+    <!-- Framer Motion UMD -->
+    <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
+
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #fdfbf7;
+            color: #2e1c14;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Glassmorphism */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.78);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 235, 230, 0.85);
+        }
+
+        .glass-card-hover {
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glass-card-hover:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 35px -10px rgba(244, 63, 94, 0.15), 0 10px 15px -5px rgba(245, 158, 11, 0.08);
+            border-color: rgba(251, 113, 133, 0.4);
+        }
+
+        /* Gradient Text */
+        .gradient-text-rose {
+            background: linear-gradient(135deg, #e11d48 0%, #f59e0b 50%, #be123c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-text-gold {
+            background: linear-gradient(135deg, #d97706 0%, #f59e0b 50%, #b45309 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Subtle custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #fdf2f4;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #fca5a5;
+            border-radius: 9999px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f87171;
+        }
+
+        /* Floating Heart Keyframes for Click Effect */
+        @keyframes riseAndFade {
+            0% {
+                opacity: 1;
+                transform: translateY(0) scale(0.6) rotate(0deg);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-130px) scale(1.3) rotate(var(--rot, 20deg));
+            }
+        }
+
+        .floating-heart-particle {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            animation: riseAndFade 1.4s ease-out forwards;
+        }
+    </style>
 </head>
-<body>
 
-<div id="root"></div>
+<body class="selection:bg-rose-200 selection:text-rose-900">
+    <div id="root"></div>
 
-<script type="text/babel" data-type="module" data-presets="react">
-import React, { useState, useEffect, useCallback, useRef } from "react";
-import { createRoot } from "react-dom/client";
-import { motion, AnimatePresence } from "framer-motion";
-import confetti from "canvas-confetti";
-import {
-  Heart,
-  Flower2,
-  Star,
-  Coffee,
-  Sparkles,
-  Sun,
-  Gift,
-  Image as ImageIcon,
-  MessageCircleHeart,
-  MoveDown,
-} from "lucide-react";
+    <script type="text/babel">
+        const { useState, useEffect, useRef } = React;
+        const { motion, AnimatePresence } = window.Motion || {
+            motion: {
+                div: ({ children, ...props }) => <div {...props}>{children}</div>,
+                section: ({ children, ...props }) => <section {...props}>{children}</section>,
+                button: ({ children, ...props }) => <button {...props}>{children}</button>,
+                p: ({ children, ...props }) => <p {...props}>{children}</p>,
+                span: ({ children, ...props }) => <span {...props}>{children}</span>,
+                h1: ({ children, ...props }) => <h1 {...props}>{children}</h1>,
+                h2: ({ children, ...props }) => <h2 {...props}>{children}</h2>,
+            },
+            AnimatePresence: ({ children }) => <>{children}</>
+        };
 
-function FloatingHearts({ hearts, onDone }) {
-  return (
-    <div className="pointer-events-none fixed inset-0 z-[60] overflow-hidden">
-      <AnimatePresence>
-        {hearts.map((h) => (
-          <motion.div
-            key={h.id}
-            initial={{ opacity: 0, y: "100vh", x: h.x, scale: h.scale, rotate: h.rotateStart }}
-            animate={{ opacity: [0, 1, 1, 0], y: "-15vh", rotate: h.rotateEnd }}
-            transition={{ duration: h.duration, ease: "easeOut", delay: h.delay }}
-            onAnimationComplete={() => onDone(h.id)}
-            className="absolute bottom-0"
-            style={{ left: h.x }}
-          >
-            <Heart
-              fill={h.color}
-              stroke={h.color}
-              className="drop-shadow-md"
-              style={{ width: h.size, height: h.size }}
-            />
-          </motion.div>
-        ))}
-      </AnimatePresence>
-    </div>
-  );
-}
+        // Lucide SVG Icons crafted directly for optimal performance & reactivity
+        const Icons = {
+            Heart: ({ className = "w-6 h-6", fill = "none" }) => (
+                <svg className={className} viewBox="0 0 24 24" fill={fill} stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+                </svg>
+            ),
+            Sparkles: ({ className = "w-6 h-6" }) => (
+                <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+                    <path d="M5 3v4" /><path d="M19 17v4" /><path d="M3 5h4" /><path d="M17 19h4" />
+                </svg>
+            ),
+            Coffee: ({ className = "w-6 h-6" }) => (
+                <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M17 8h1a4 4 0 1 1 0 8h-1" />
+                    <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z" />
+                    <line x1="6" x2="6" y1="2" y2="4" /><line x1="10" x2="10" y1="2" y2="4" /><line x1="14" x2="14" y1="2" y2="4" />
+                </svg>
+            ),
+            Gift: ({ className = "w-6 h-6" }) => (
+                <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="3" y="8" width="18" height="4" rx="1" />
+                    <path d="M12 8v13" />
+                    <path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7" />
+                    <path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5" />
+                </svg>
+            ),
+            Star: ({ className = "w-6 h-6", fill = "none" }) => (
+                <svg className={className} viewBox="0 0 24 24" fill={fill} stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                </svg>
+            ),
+            Sun: ({ className = "w-6 h-6" }) => (
+                <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="4" />
+                    <path d="M12 2v2" /><path d="M12 20v2" />
+                    <path d="m4.93 4.93 1.41 1.41" /><path d="m17.66 17.66 1.41 1.41" />
+                    <path d="M2 12h2" /><path d="M20 12h2" />
+                    <path d="m6.34 17.66-1.41 1.41" /><path d="m19.07 4.93-1.41 1.41" />
+                </svg>
+            ),
+            ShieldHeart: ({ className = "w-6 h-6" }) => (
+                <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
+                    <path d="M12 14.5c-1.4 0-2.5-1.1-2.5-2.5 0-1.5 2.5-4 2.5-4s2.5 2.5 2.5 4c0 1.4-1.1 2.5-2.5 2.5z" />
+                </svg>
+            ),
+            Flower: ({ className = "w-6 h-6" }) => (
+                <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="3" />
+                    <path d="M12 16.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 1 1 12 7.5a4.5 4.5 0 1 1 4.5 4.5 4.5 4.5 0 1 1-4.5 4.5" />
+                    <path d="M12 7.5V3" /><path d="M7.5 12H3" /><path d="M16.5 12H21" /><path d="M12 16.5V21" />
+                </svg>
+            ),
+            Crown: ({ className = "w-6 h-6" }) => (
+                <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14" />
+                </svg>
+            ),
+            Smile: ({ className = "w-6 h-6" }) => (
+                <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+                    <line x1="9" x2="9.01" y1="9" y2="9" />
+                    <line x1="15" x2="15.01" y1="9" y2="9" />
+                </svg>
+            ),
+            Check: ({ className = "w-6 h-6" }) => (
+                <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                </svg>
+            ),
+            Volume2: ({ className = "w-6 h-6" }) => (
+                <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                    <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+                </svg>
+            ),
+            VolumeX: ({ className = "w-6 h-6" }) => (
+                <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                    <line x1="22" x2="16" y1="9" y2="15" />
+                    <line x1="16" x2="22" y1="9" y2="15" />
+                </svg>
+            ),
+            Upload: ({ className = "w-6 h-6" }) => (
+                <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="17 8 12 3 7 8" />
+                    <line x1="12" x2="12" y1="3" y2="15" />
+                </svg>
+            ),
+            X: ({ className = "w-6 h-6" }) => (
+                <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="18" x2="6" y1="6" y2="18" /><line x1="6" x2="18" y1="6" y2="18" />
+                </svg>
+            ),
+            ChevronDown: ({ className = "w-6 h-6" }) => (
+                <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="6 9 12 15 18 9" />
+                </svg>
+            ),
+            Award: ({ className = "w-6 h-6" }) => (
+                <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="8" r="6" />
+                    <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
+                </svg>
+            ),
+            PartyPopper: ({ className = "w-6 h-6" }) => (
+                <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5.8 11.3 2 22l10.7-3.79" />
+                    <path d="M4 3h.01" /><path d="M22 8h.01" /><path d="M15 2h.01" />
+                    <path d="M22 20h.01" /><path d="m22 2-2.24.75a2.9 2.9 0 0 0-1.96 3.12v0c.1.86-.57 1.63-1.45 1.63h-.38e-2" />
+                </svg>
+            )
+        };
 
-function SectionHeading({ eyebrow, title, subtitle }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.4 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className="text-center max-w-2xl mx-auto mb-14"
-    >
-      <h2 className="font-display text-4xl md:text-5xl text-rose-600 mb-4 leading-relaxed">
-        {title}
-      </h2>
-      {subtitle && (
-        <p className="text-plum/70 text-lg leading-loose">{subtitle}</p>
-      )}
-    </motion.div>
-  );
-}
+        // Soft Harmonic Audio Synthesizer (No external mp3 needed, works instantly!)
+        const playChime = (type = "heart") => {
+            try {
+                const AudioContext = window.AudioContext || window.webkitAudioContext;
+                if (!AudioContext) return;
+                const ctx = new AudioContext();
 
-const gratitudeCards = [
-  {
-    icon: Coffee,
-    title: "قمت من الصباح الباكر",
-    text: "من أول ساعات النهار وأنتِ واقفة، تحضري وترتبي وتخدمي بلا ما تشتكي من التعب.",
-    color: "bg-amber-100 text-amber-500",
-  },
-  {
-    icon: Heart,
-    title: "صبر ما يتوصفش",
-    text: "تحملتيني في أصعب اللحظات، وضلّيتي هادية ومبتسمة رغم كل الضغط.",
-    color: "bg-rose-100 text-rose-500",
-  },
-  {
-    icon: Star,
-    title: "مجهود يستحق كل التقدير",
-    text: "من الصباح للعشية، وقتك كله كان موهوب من أجلي، بلا حساب وبلا مقابل.",
-    color: "bg-amber-100 text-amber-500",
-  },
-  {
-    icon: Flower2,
-    title: "لمسة حنان صغيرة",
-    text: "ما نسيتيش تسقسيني كيفاش حالتي، وسط كل هالتعب لقيتي وقت تحسي بيا.",
-    color: "bg-rose-100 text-rose-500",
-  },
-  {
-    icon: Sparkles,
-    title: "كل التفاصيل الصغيرة",
-    text: "الأشياء اللي عملتيها وحتى ما نتفطنولها، كل وحدة منها زادتني أمان وراحة بال.",
-    color: "bg-amber-100 text-amber-500",
-  },
-];
+                if (type === "celebration") {
+                    const notes = [523.25, 659.25, 783.99, 1046.50, 1318.51]; // C5, E5, G5, C6, E6
+                    notes.forEach((freq, idx) => {
+                        const osc = ctx.createOscillator();
+                        const gain = ctx.createGain();
+                        osc.type = "sine";
+                        osc.frequency.setValueAtTime(freq, ctx.currentTime + idx * 0.1);
+                        gain.gain.setValueAtTime(0, ctx.currentTime + idx * 0.1);
+                        gain.gain.linearRampToValueAtTime(0.18, ctx.currentTime + idx * 0.1 + 0.05);
+                        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + idx * 0.1 + 0.6);
+                        osc.connect(gain);
+                        gain.connect(ctx.destination);
+                        osc.start(ctx.currentTime + idx * 0.1);
+                        osc.stop(ctx.currentTime + idx * 0.1 + 0.7);
+                    });
+                } else {
+                    // Heart click soft chime
+                    const osc = ctx.createOscillator();
+                    const gain = ctx.createGain();
+                    osc.type = "sine";
+                    osc.frequency.setValueAtTime(659.25, ctx.currentTime); // E5
+                    osc.frequency.exponentialRampToValueAtTime(880, ctx.currentTime + 0.2); // A5
+                    gain.gain.setValueAtTime(0.15, ctx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.4);
+                    osc.connect(gain);
+                    gain.connect(ctx.destination);
+                    osc.start();
+                    osc.stop(ctx.currentTime + 0.45);
+                }
+            } catch (e) {
+                // Audio policy or error
+            }
+        };
 
-const thankYouMessages = [
-  "ربي يخليك ليا يا روحي، ونتي أعز ما عندي.",
-  "يعطيك الصحة على كل نقطة تعب حسيت بيها اليوم من أجلي.",
-  "ديما واشفتها معايا، ما خليتني نحس بالوحدة حتى لحظة.",
-  "من دون ما تحكي، نعرف قداه تعبت وقداه حبك كبير.",
-  "الله يجازيك عليا بكل خير، في الدنيا وفي كل حاجة تتمنيها.",
-  "نتي موش بس أختي، نتي سندي في كل وقت صعيب.",
-];
+        function App() {
+            const [loveCount, setLoveCount] = useState(100);
+            const [isSoundOn, setIsSoundOn] = useState(true);
+            const [showSurpriseModal, setShowSurpriseModal] = useState(false);
+            const [selectedGalleryImg, setSelectedGalleryImg] = useState(null);
+            const [flippedCards, setFlippedCards] = useState({});
+            const [floatingHearts, setFloatingHearts] = useState([]);
 
-function ThankYouCard({ message, index }) {
-  const [flipped, setFlipped] = useState(false);
-  return (
-    <motion.button
-      onClick={() => setFlipped((f) => !f)}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.5, delay: index * 0.05 }}
-      className="relative h-48 w-full [perspective:1200px] text-right"
-    >
-      <motion.div
-        animate={{ rotateY: flipped ? 180 : 0 }}
-        transition={{ duration: 0.6, ease: "easeInOut" }}
-        className="relative h-full w-full [transform-style:preserve-3d]"
-      >
-        <div
-          className="absolute inset-0 flex flex-col items-center justify-center gap-3 rounded-2xl bg-white/70 border border-rose-200 shadow-sm p-6 [backface-visibility:hidden]"
-        >
-          <MessageCircleHeart className="w-8 h-8 text-rose-400" />
-          <p className="text-plum/60 text-sm">اضغطي باش تشوفي الرسالة</p>
-        </div>
-        <div
-          className="absolute inset-0 flex items-center justify-center rounded-2xl bg-gradient-to-br from-rose-400 to-amber-400 p-6 text-center [backface-visibility:hidden]"
-          style={{ transform: "rotateY(180deg)" }}
-        >
-          <p className="text-white font-medium leading-loose text-base">
-            {message}
-          </p>
-        </div>
-      </motion.div>
-    </motion.button>
-  );
-}
+            // Default gallery pictures (Artistic, warm sisterly moments placeholders with local upload option)
+            const [galleryImages, setGalleryImages] = useState([
+                {
+                    id: 1,
+                    title: "ضحكتنا اللي ديما مع بعضنا",
+                    tag: "فرحة دايمة",
+                    url: "https://images.unsplash.com/photo-1543807535-eceef0bc6599?auto=format&fit=crop&w=700&q=80"
+                },
+                {
+                    id: 2,
+                    title: "قهوة الصباح والحديث الحلو",
+                    tag: "أحلى لمّة",
+                    url: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=700&q=80"
+                },
+                {
+                    id: 3,
+                    title: "سند ورفقة درب في كل خطوة",
+                    tag: "أغلى أخت",
+                    url: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=700&q=80"
+                },
+                {
+                    id: 4,
+                    title: "ذكريات من ذهب لا تُنسى",
+                    tag: "عشرة عمر",
+                    url: "https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=700&q=80"
+                }
+            ]);
 
-const galleryItems = [
-  { caption: "ضحكتنا اللي ما تنسنا", from: "from-rose-200", to: "to-amber-100" },
-  { caption: "أيامنا الحلوة سوا", from: "from-amber-100", to: "to-rose-100" },
-  { caption: "لحظات محفورة فينا", from: "from-rose-100", to: "to-rose-300" },
-  { caption: "سهراتنا الطويلة", from: "from-amber-200", to: "to-amber-50" },
-  { caption: "حكايتنا اللي ما تخلص", from: "from-rose-300", to: "to-amber-100" },
-  { caption: "أحلى الذكريات", from: "from-amber-100", to: "to-rose-200" },
-];
+            // Timeline / Effort items of today
+            const todayEfforts = [
+                {
+                    id: 1,
+                    time: "أول النهار ☀️",
+                    icon: Icons.Sun,
+                    title: "وقفتك معايا من أول دقيقة",
+                    desc: "من الصباح الباكر وإنتِ حاضرة، تشجعي وتعاوني، وبطاقتك الإيجابية خففتِ عليّ كل الحيرة والضغط.",
+                    badge: "حضور يسوى الذهب",
+                    color: "from-amber-500 to-orange-500",
+                    bgLight: "bg-amber-50/80 border-amber-200"
+                },
+                {
+                    id: 2,
+                    time: "وسط التعب والمعمعة ☕",
+                    icon: Icons.Coffee,
+                    title: "الصبر والابتسامة رغم الإرهاق",
+                    desc: "رغم أنو الوقت كان يزرب والخدمة ياسر متعبة، بقيتي صابرة ومبتسمة ويدك ما ترفعتش جملة من معاونتي.",
+                    badge: "طيبة ووسع بال",
+                    color: "from-rose-500 to-pink-500",
+                    bgLight: "bg-rose-50/80 border-rose-200"
+                },
+                {
+                    id: 3,
+                    time: "التفاصيل الصعبة والحلول 🌟",
+                    icon: Icons.Sparkles,
+                    title: "اللمسة السحرية والتنسيق المتقن",
+                    desc: "كل حاجة حرت فيها لقيت عندك حلها، وكل حاجة دخلت فيها يدك خرجت في أبهى وأحسن حلة.",
+                    badge: "ذوق وإتقان",
+                    color: "from-purple-500 to-rose-500",
+                    bgLight: "bg-purple-50/80 border-purple-200"
+                },
+                {
+                    id: 4,
+                    time: "آخر اليوم والنتيجة الرائعة 🏆",
+                    icon: Icons.ShieldHeart,
+                    title: "السند الحقيقي اللي نرتكي عليه",
+                    desc: "كملنا نهارنا بنجاح بفضلك، ولو ما كنتيش معايا اليوم ما كنتش نخلط ولا نعمل حتى ربع اللي عملناه.",
+                    badge: "فخر وامتنان",
+                    color: "from-emerald-500 to-teal-500",
+                    bgLight: "bg-emerald-50/80 border-emerald-200"
+                }
+            ];
 
-function App() {
-  const [hearts, setHearts] = useState([]);
-  const [surprise, setSurprise] = useState(false);
-  const heartIdRef = useRef(0);
+            // Interactive Flip Cards (Messages of Love & Gratitude)
+            const thankCards = [
+                {
+                    id: 'card1',
+                    frontTitle: 'ربي يخليك ليا 🌸',
+                    frontSubtitle: 'دعوة من القلب تنبع كل يوم',
+                    icon: Icons.Flower,
+                    tunisianWord: 'يا قرة عيني ونوارة دارنا',
+                    fullMessage: 'يا رب ما يحرمني من ضحكتك ووجودك اللي منور دنيتنا. إنتِ مش مجرد أخت، إنتِ نعمة ربي حطها في حياتي باش نكون ديما في أمان وقوة.',
+                    accent: 'border-rose-300 hover:border-rose-400 text-rose-600'
+                },
+                {
+                    id: 'card2',
+                    frontTitle: 'يعطيك الصحة على كل قطرة تعب ☕',
+                    frontSubtitle: 'تعبك على راسي وعيني',
+                    icon: Icons.Coffee,
+                    tunisianWord: 'ما قصرتش جملة وما نسالك كان الخير',
+                    fullMessage: 'كل خطوة خطيتيها معايا اليوم، وكل دقيقة عطيتها من وقتك مسجلة في قلبي بالذهب. تعبك عزيز عليا برشا ومستحيل ننسى وقفتك الصادقة.',
+                    accent: 'border-amber-300 hover:border-amber-400 text-amber-600'
+                },
+                {
+                    id: 'card3',
+                    frontTitle: 'ديما واقفتها معايا 🛡️',
+                    frontSubtitle: 'السند والضهر الحقيقي',
+                    icon: Icons.ShieldHeart,
+                    tunisianWord: 'كي نتلفت نلقاك الأولى بجنبي',
+                    fullMessage: 'الدنيا هذي شكون عندو فيها غير خوه وأختو؟ وقفتك اليوم أثبتتلي للمرة الألف أنك الظهر اللي نرتكي عليه وأنا مطمن ومغمض عيني.',
+                    accent: 'border-red-300 hover:border-red-400 text-red-600'
+                },
+                {
+                    id: 'card4',
+                    frontTitle: 'أحن قلب في الدنيا ❤️',
+                    frontSubtitle: 'دفء وطيبة لا تنتهي',
+                    icon: Icons.Heart,
+                    tunisianWord: 'قلبك صابر وحنين ياسر',
+                    fullMessage: 'طيبة قلبك ونيتك الصافية تخليني ديما نحس بالراحة. شكراً على الابتسامة والكلمة الطيبة اللي ديما تقوليها في وقتها باش تطمني.',
+                    accent: 'border-pink-300 hover:border-pink-400 text-pink-600'
+                },
+                {
+                    id: 'card5',
+                    frontTitle: 'تاج على الراس وفخر 👑',
+                    frontSubtitle: 'محبتك وسام شرف',
+                    icon: Icons.Crown,
+                    tunisianWord: 'محلاك ومحلا كرمك وأصلك',
+                    fullMessage: 'كلمة شكراً والله لا توفيك حقك، قداش من حاجة سهلتها، وقداش من ضغط نحيتو على كتافي اليوم. ربي يعليك ويفرح قلبك كيما فرحتني.',
+                    accent: 'border-yellow-300 hover:border-yellow-400 text-amber-600'
+                },
+                {
+                    id: 'card6',
+                    frontTitle: 'استراحة وتكريم مستحق 🎁',
+                    frontSubtitle: 'توا دوري باش ندللك',
+                    icon: Icons.Gift,
+                    tunisianWord: 'من هنا ورايح الراحة والدلال عليك!',
+                    fullMessage: 'توا وفات الخدمة والتعب وجاء وقت الراحة التامة والاستجمام! معفية رسمياً من كل تعب، وتكريمك اليوم راهو فرض عليا بكل حب وسرور.',
+                    accent: 'border-emerald-300 hover:border-emerald-400 text-emerald-600'
+                }
+            ];
 
-  const launchHearts = useCallback(() => {
-    const colors = ["#C4577A", "#E890A0", "#E8A93B", "#F5D08D"];
-    const newHearts = Array.from({ length: 22 }).map(() => {
-      heartIdRef.current += 1;
-      return {
-        id: heartIdRef.current,
-        x: `${Math.random() * 90 + 3}vw`,
-        size: 18 + Math.random() * 26,
-        duration: 2.4 + Math.random() * 1.6,
-        delay: Math.random() * 0.6,
-        scale: 0.6 + Math.random() * 0.6,
-        rotateStart: Math.random() * 40 - 20,
-        rotateEnd: Math.random() * 60 - 30,
-        color: colors[Math.floor(Math.random() * colors.length)],
-      };
-    });
-    setHearts((prev) => [...prev, ...newHearts]);
-  }, []);
+            // Trigger Confetti Explosion
+            const launchConfetti = () => {
+                if (isSoundOn) playChime("celebration");
+                if (window.confetti) {
+                    // Cannon 1
+                    window.confetti({
+                        particleCount: 80,
+                        spread: 70,
+                        origin: { y: 0.6 },
+                        colors: ['#e11d48', '#f59e0b', '#fb7185', '#ffd700', '#f43f5e', '#ffffff']
+                    });
+                    // Cannon 2 (Firework burst left & right)
+                    setTimeout(() => {
+                        window.confetti({
+                            particleCount: 50,
+                            angle: 60,
+                            spread: 55,
+                            origin: { x: 0 }
+                        });
+                        window.confetti({
+                            particleCount: 50,
+                            angle: 120,
+                            spread: 55,
+                            origin: { x: 1 }
+                        });
+                    }, 250);
+                }
+            };
 
-  const removeHeart = useCallback((id) => {
-    setHearts((prev) => prev.filter((h) => h.id !== id));
-  }, []);
+            // Spawn Flying Hearts on button or screen click
+            const triggerHeartBurst = (e) => {
+                if (isSoundOn) playChime("heart");
+                setLoveCount(prev => prev + 1);
 
-  const launchSurprise = useCallback(() => {
-    setSurprise(true);
-    const colors = ["#C4577A", "#E890A0", "#E8A93B", "#F5D08D", "#FBE7C6"];
-    const duration = 2200;
-    const end = Date.now() + duration;
+                const x = e ? (e.clientX || window.innerWidth / 2) : window.innerWidth / 2;
+                const y = e ? (e.clientY || window.innerHeight / 2) : window.innerHeight / 2;
 
-    (function frame() {
-      confetti({
-        particleCount: 4,
-        angle: 60,
-        spread: 65,
-        origin: { x: 0, y: 0.7 },
-        colors,
-      });
-      confetti({
-        particleCount: 4,
-        angle: 120,
-        spread: 65,
-        origin: { x: 1, y: 0.7 },
-        colors,
-      });
-      if (Date.now() < end) requestAnimationFrame(frame);
-    })();
+                const newParticles = Array.from({ length: 7 }).map((_, i) => ({
+                    id: Date.now() + Math.random(),
+                    x: x + (Math.random() * 80 - 40),
+                    y: y + (Math.random() * 40 - 20),
+                    rot: `${(Math.random() * 60 - 30)}deg`,
+                    emoji: ['❤️', '💖', '✨', '🌸', '🥰', '💕'][Math.floor(Math.random() * 6)]
+                }));
 
-    confetti({
-      particleCount: 140,
-      spread: 100,
-      origin: { y: 0.6 },
-      colors,
-      startVelocity: 45,
-    });
-  }, []);
+                setFloatingHearts(prev => [...prev, ...newParticles]);
 
-  return (
-    <div className="relative">
-      <FloatingHearts hearts={hearts} onDone={removeHeart} />
+                setTimeout(() => {
+                    setFloatingHearts(prev => prev.filter(p => !newParticles.some(np => np.id === p.id)));
+                }, 1500);
+            };
 
-      <section className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden bg-gradient-to-b from-rose-100 via-cream to-cream">
-        <div className="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-rose-200/50 blur-3xl" />
-        <div className="absolute -bottom-24 -left-24 w-72 h-72 rounded-full bg-amber-200/50 blur-3xl" />
+            const toggleCard = (id) => {
+                if (isSoundOn) playChime("heart");
+                setFlippedCards(prev => ({
+                    ...prev,
+                    [id]: !prev[id]
+                }));
+            };
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="relative z-10 text-center max-w-3xl"
-        >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.7 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="mx-auto mb-6 w-16 h-16 rounded-full bg-rose-500 flex items-center justify-center shadow-lg shadow-rose-300"
-          >
-            <Heart className="text-white w-8 h-8" fill="white" />
-          </motion.div>
+            const revealAllCards = () => {
+                if (isSoundOn) playChime("celebration");
+                const all = {};
+                thankCards.forEach(c => all[c.id] = true);
+                setFlippedCards(all);
+                launchConfetti();
+            };
 
-          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl text-plum leading-relaxed mb-6">
-            شكراً من القلب لأحلى وأغلى أخت في الدنيا ❤️
-          </h1>
+            // Handle user adding a personal photo to the gallery
+            const handleImageUpload = (e) => {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = () => {
+                        const newImg = {
+                            id: Date.now(),
+                            title: "صورتنا الجميلة المضافة حديثاً ❤️",
+                            tag: "ذكرى خاصة",
+                            url: reader.result
+                        };
+                        setGalleryImages(prev => [newImg, ...prev]);
+                        launchConfetti();
+                    };
+                    reader.readAsDataURL(file);
+                }
+            };
 
-          <p className="text-plum/70 text-lg md:text-xl leading-loose mb-10">
-            نعرف قداه تعبتي اليوم من أجلي، وقداه عطيتي من وقتك وجهدك بلا ما تفكري
-            حتى في روحك. هذا الموقع الصغير موش كافي باش يوفّي حقك، لكن حبيت
-            نقلك بيه: نحبك بزاف، ونتقدرك أكثر ممّا تتخيلي.
-          </p>
-
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={launchHearts}
-            className="inline-flex items-center gap-2 bg-rose-500 hover:bg-rose-600 text-white font-medium text-lg px-8 py-4 rounded-full shadow-lg shadow-rose-300 transition-colors"
-          >
-            <Heart className="w-5 h-5" fill="white" />
-            أطلقي القلوب
-          </motion.button>
-
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-            className="mt-16 flex flex-col items-center gap-2 text-plum/40"
-          >
-            <span className="text-sm">شدّي بيا لتحت</span>
-            <MoveDown className="w-5 h-5" />
-          </motion.div>
-        </motion.div>
-      </section>
-
-      <section className="py-24 px-6 bg-cream">
-        <SectionHeading
-          title="تعبك اليوم ما يضيعش"
-          subtitle="كل دقيقة تعب حسيت بيها اليوم، إحنا حاسين بيها ومقدرينها"
-        />
-        <div className="max-w-5xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {gratitudeCards.map((card, i) => {
-            const Icon = card.icon;
             return (
-              <motion.div
-                key={card.title}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="bg-white rounded-2xl p-6 border border-rose-100 shadow-sm hover:shadow-md transition-shadow"
-              >
-                <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-4 ${card.color}`}>
-                  <Icon className="w-6 h-6" />
+                <div className="min-h-screen bg-gradient-to-b from-[#fffcf8] via-[#fff5f5] to-[#fff8f0] text-stone-800 relative overflow-hidden">
+
+                    {/* Ambient Glowing Background Orbs */}
+                    <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
+                        <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-rose-200/35 blur-[120px] animate-pulse-glow"></div>
+                        <div className="absolute top-[35%] left-[-10%] w-[600px] h-[600px] rounded-full bg-amber-200/30 blur-[130px] animate-pulse-glow" style={{ animationDelay: '1.5s' }}></div>
+                        <div className="absolute bottom-[-10%] right-[20%] w-[550px] h-[550px] rounded-full bg-pink-200/35 blur-[140px] animate-pulse-glow" style={{ animationDelay: '2.5s' }}></div>
+                    </div>
+
+                    {/* Floating Hearts Particles */}
+                    {floatingHearts.map(p => (
+                        <div
+                            key={p.id}
+                            className="floating-heart-particle text-2xl"
+                            style={{
+                                left: `${p.x}px`,
+                                top: `${p.y}px`,
+                                '--rot': p.rot
+                            }}
+                        >
+                            {p.emoji}
+                        </div>
+                    ))}
+
+                    {/* Top Floating Navigation / Sound & Counter Bar */}
+                    <header className="sticky top-4 z-40 max-w-5xl mx-auto px-4">
+                        <nav className="glass-card rounded-full px-5 py-3 shadow-md shadow-rose-500/5 flex items-center justify-between border border-rose-100/80">
+                            <div className="flex items-center gap-3">
+                                <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-rose-500 to-amber-400 flex items-center justify-center text-white shadow-sm shadow-rose-500/30">
+                                    <Icons.Heart className="w-5 h-5" fill="currentColor" />
+                                </div>
+                                <div>
+                                    <span className="font-display font-bold text-stone-900 text-sm md:text-base">لأختي الغالية ❤️</span>
+                                    <span className="hidden sm:inline-block text-xs text-rose-600 mr-2 bg-rose-50 px-2 py-0.5 rounded-full border border-rose-200/60 font-medium">سندي وضحكتي</span>
+                                </div>
+                            </div>
+
+                            <div className="flex items-center gap-2 md:gap-4">
+                                {/* Love Counter Badge */}
+                                <button
+                                    onClick={(e) => triggerHeartBurst(e)}
+                                    title="اضغطي لزيادة المحبة!"
+                                    className="flex items-center gap-1.5 bg-white/90 hover:bg-rose-50 px-3.5 py-1.5 rounded-full border border-rose-200/70 text-rose-600 text-xs md:text-sm font-bold shadow-xs transition transform active:scale-95"
+                                >
+                                    <Icons.Heart className="w-4 h-4 animate-bounce" fill="#f43f5e" />
+                                    <span>{loveCount}</span>
+                                    <span className="text-stone-500 font-normal hidden sm:inline">نبضة حب</span>
+                                </button>
+
+                                {/* Sound Toggle */}
+                                <button
+                                    onClick={() => setIsSoundOn(!isSoundOn)}
+                                    className="p-2 rounded-full hover:bg-rose-100/60 text-stone-600 hover:text-rose-600 transition"
+                                    title={isSoundOn ? "كتم الصوت" : "تشغيل الصوت"}
+                                >
+                                    {isSoundOn ? <Icons.Volume2 className="w-5 h-5" /> : <Icons.VolumeX className="w-5 h-5 text-stone-400" />}
+                                </button>
+                            </div>
+                        </nav>
+                    </header>
+
+                    <main className="relative z-10">
+
+                        {/* ========================================================
+                HERO SECTION
+            ======================================================== */}
+                        <section className="pt-12 pb-20 px-4 text-center max-w-4xl mx-auto">
+                            <motion.div
+                                initial={{ opacity: 0, y: 25 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8 }}
+                                className="space-y-6"
+                            >
+                                {/* Special Tag */}
+                                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-rose-100/90 via-amber-100/90 to-rose-100/90 border border-rose-200 shadow-xs text-xs md:text-sm font-semibold text-rose-800 animate-float-slow">
+                                    <Icons.Sparkles className="w-4 h-4 text-amber-500" />
+                                    <span>رسالة حب وشكر من أعماق القلب ✨</span>
+                                    <Icons.Sparkles className="w-4 h-4 text-rose-500" />
+                                </div>
+
+                                {/* Main Headline */}
+                                <h1 className="font-display font-extrabold text-3xl sm:text-5xl md:text-6xl text-stone-900 leading-[1.3] md:leading-[1.25] tracking-tight">
+                                    شكراً من القلب لأحلى وأغلى <br />
+                                    <span className="gradient-text-rose relative inline-block">
+                                        أخت في الدنيا كلها
+                                        <svg className="absolute -bottom-2 left-0 w-full h-3 text-rose-400/40" viewBox="0 0 100 12" preserveAspectRatio="none">
+                                            <path d="M0,8 Q50,0 100,8" stroke="currentColor" strokeWidth="4" fill="none" strokeLinecap="round" />
+                                        </svg>
+                                    </span> ❤️
+                                </h1>
+
+                                {/* Heartfelt Subtitle (Tunisian + Arabic touch) */}
+                                <p className="text-base sm:text-lg md:text-xl text-stone-600 max-w-2xl mx-auto leading-relaxed font-normal">
+                                    اليوم شفت تعبك، وقفتك الصادقة، وسهرك وجهدك الكبير اللي ما يتعوضش بكنوز الدنيا.
+                                    حبيت نقلك من أعماق قلبي: <strong className="text-rose-700 font-bold">يعطيك الصحة وربي يفضلك ليا وما يحرمنيش من طلتك وسندك الدايم.</strong>
+                                </p>
+
+                                {/* Hero Actions */}
+                                <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
+                                    <button
+                                        onClick={(e) => {
+                                            triggerHeartBurst(e);
+                                            launchConfetti();
+                                        }}
+                                        className="group relative inline-flex items-center gap-3 bg-gradient-to-r from-rose-600 via-rose-500 to-amber-500 hover:from-rose-700 hover:to-amber-600 text-white font-bold px-7 py-4 rounded-2xl shadow-lg shadow-rose-500/25 transition-all transform hover:-translate-y-0.5 active:translate-y-0 text-base md:text-lg"
+                                    >
+                                        <Icons.Heart className="w-6 h-6 animate-pulse" fill="white" />
+                                        <span>أرسلي قلوب وحب طائر 💖</span>
+                                        <span className="absolute -top-2 -right-2 flex h-4 w-4">
+                                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                                            <span className="relative inline-flex rounded-full h-4 w-4 bg-amber-500"></span>
+                                        </span>
+                                    </button>
+
+                                    <a
+                                        href="#efforts"
+                                        className="inline-flex items-center gap-2 glass-card hover:bg-white text-stone-700 hover:text-rose-600 font-semibold px-6 py-4 rounded-2xl border border-stone-200/80 shadow-xs transition transform hover:-translate-y-0.5"
+                                    >
+                                        <span>اكتشفي ما في قلبي لكِ</span>
+                                        <Icons.ChevronDown className="w-5 h-5 animate-bounce" />
+                                    </a>
+                                </div>
+
+                                {/* Quick Appreciation Pills */}
+                                <div className="grid grid-cols-3 gap-3 max-w-md mx-auto pt-6 text-center">
+                                    <div className="glass-card p-3 rounded-xl border border-rose-100 shadow-xs">
+                                        <p className="text-xl md:text-2xl font-bold font-display text-rose-600">100%</p>
+                                        <p className="text-xs text-stone-500 font-medium">حنية وصبر</p>
+                                    </div>
+                                    <div className="glass-card p-3 rounded-xl border border-amber-100 shadow-xs">
+                                        <p className="text-xl md:text-2xl font-bold font-display text-amber-600">∞</p>
+                                        <p className="text-xs text-stone-500 font-medium">حب وتقدير</p>
+                                    </div>
+                                    <div className="glass-card p-3 rounded-xl border border-rose-100 shadow-xs">
+                                        <p className="text-xl md:text-2xl font-bold font-display text-rose-600">#1</p>
+                                        <p className="text-xs text-stone-500 font-medium">سند في الدنيا</p>
+                                    </div>
+                                </div>
+
+                            </motion.div>
+                        </section>
+
+                        {/* ========================================================
+                SECTION: "تعبك اليوم ما يضيعش" (Timeline / Efforts)
+            ======================================================== */}
+                        <section id="efforts" className="py-16 px-4 max-w-5xl mx-auto">
+                            <div className="text-center space-y-3 mb-12">
+                                <div className="inline-flex items-center gap-2 text-rose-600 bg-rose-50 px-4 py-1 rounded-full text-xs font-bold border border-rose-200">
+                                    <Icons.Star className="w-3.5 h-3.5" fill="#f43f5e" />
+                                    <span>تعبك اليوم ما يضيعش هباء</span>
+                                </div>
+                                <h2 className="font-display font-extrabold text-2xl sm:text-4xl text-stone-900">
+                                    كل خطوة خطيتيها معايا اليوم مسجلة بالحب
+                                </h2>
+                                <p className="text-stone-600 max-w-xl mx-auto text-sm sm:text-base">
+                                    وقفتك ما كانتش عادية، تعبتي من قلبك وضحيتي بوقتك وراحتك... وهاذي شهادة فخر واعتراف بفضلك:
+                                </p>
+                            </div>
+
+                            {/* Timeline Cards Grid */}
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                {todayEfforts.map((item, idx) => {
+                                    const IconComponent = item.icon;
+                                    return (
+                                        <motion.div
+                                            key={item.id}
+                                            initial={{ opacity: 0, y: 20 }}
+                                            whileInView={{ opacity: 1, y: 0 }}
+                                            viewport={{ once: true }}
+                                            transition={{ delay: idx * 0.1, duration: 0.5 }}
+                                            className={`glass-card glass-card-hover p-6 rounded-3xl border shadow-sm relative overflow-hidden flex flex-col justify-between`}
+                                        >
+                                            {/* Top Bar with icon and time */}
+                                            <div>
+                                                <div className="flex items-center justify-between mb-4">
+                                                    <div className={`w-12 h-12 rounded-2xl bg-gradient-to-tr ${item.color} text-white flex items-center justify-center shadow-md`}>
+                                                        <IconComponent className="w-6 h-6" />
+                                                    </div>
+                                                    <span className="text-xs font-semibold px-3 py-1 rounded-full bg-white/90 text-stone-600 border border-stone-200 shadow-xs">
+                                                        {item.time}
+                                                    </span>
+                                                </div>
+
+                                                <h3 className="font-display font-bold text-lg sm:text-xl text-stone-900 mb-2">
+                                                    {item.title}
+                                                </h3>
+
+                                                <p className="text-stone-600 text-sm sm:text-base leading-relaxed">
+                                                    {item.desc}
+                                                </p>
+                                            </div>
+
+                                            {/* Bottom Tag */}
+                                            <div className="pt-5 mt-4 border-t border-rose-100/60 flex items-center justify-between">
+                                                <span className="text-xs font-bold text-rose-700 flex items-center gap-1.5">
+                                                    <Icons.Sparkles className="w-4 h-4 text-amber-500" />
+                                                    {item.badge}
+                                                </span>
+                                                <button
+                                                    onClick={(e) => triggerHeartBurst(e)}
+                                                    className="text-stone-400 hover:text-rose-500 transition"
+                                                    title="شكراً لكِ"
+                                                >
+                                                    <Icons.Heart className="w-5 h-5 hover:fill-rose-500" />
+                                                </button>
+                                            </div>
+                                        </motion.div>
+                                    );
+                                })}
+                            </div>
+                        </section>
+
+                        {/* ========================================================
+                SECTION: "رسائل شكر خاصة" (Interactive Cards with Reveal)
+            ======================================================== */}
+                        <section className="py-16 px-4 max-w-6xl mx-auto bg-gradient-to-b from-transparent via-rose-50/50 to-transparent rounded-3xl">
+                            <div className="text-center space-y-3 mb-10">
+                                <div className="inline-flex items-center gap-2 text-amber-700 bg-amber-100/80 px-4 py-1 rounded-full text-xs font-bold border border-amber-200">
+                                    <Icons.Gift className="w-3.5 h-3.5 text-amber-600" />
+                                    <span>بطاقات تفاعلية لمشاعر صادقة</span>
+                                </div>
+                                <h2 className="font-display font-extrabold text-2xl sm:text-4xl text-stone-900">
+                                    رسائل شكر خاصة من القلب للقلب
+                                </h2>
+                                <p className="text-stone-600 max-w-xl mx-auto text-sm sm:text-base">
+                                    اضغطي على أي بطاقة لقراءة الرسالة المخفية والكلمات التونسية الدافئة الموجهة إليكِ خصيصاً:
+                                </p>
+
+                                <div className="pt-2">
+                                    <button
+                                        onClick={revealAllCards}
+                                        className="inline-flex items-center gap-2 text-xs font-bold text-rose-600 hover:text-rose-700 bg-white hover:bg-rose-50 px-4 py-2 rounded-full border border-rose-200 shadow-xs transition"
+                                    >
+                                        <Icons.Sparkles className="w-3.5 h-3.5 text-amber-500" />
+                                        <span>كشف جميع الرسائل دفعة واحدة 💌</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            {/* Grid of Flip/Interactive Cards */}
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                                {thankCards.map((card) => {
+                                    const isFlipped = flippedCards[card.id];
+                                    const IconComp = card.icon;
+
+                                    return (
+                                        <motion.div
+                                            key={card.id}
+                                            whileHover={{ scale: 1.02 }}
+                                            whileTap={{ scale: 0.98 }}
+                                            onClick={() => toggleCard(card.id)}
+                                            className={`cursor-pointer min-h-[260px] rounded-3xl p-6 transition-all duration-300 relative border flex flex-col justify-between shadow-sm ${isFlipped
+                                                ? 'bg-gradient-to-br from-white via-rose-50/70 to-amber-50/80 border-rose-300 shadow-md shadow-rose-200/50'
+                                                : 'glass-card hover:bg-white/90 border-stone-200/80'
+                                                }`}
+                                        >
+                                            {/* Card Content */}
+                                            <div>
+                                                <div className="flex items-center justify-between mb-4">
+                                                    <div className={`p-3 rounded-2xl ${isFlipped ? 'bg-rose-500 text-white shadow-sm' : 'bg-rose-50 text-rose-600'} transition`}>
+                                                        <IconComp className="w-6 h-6" />
+                                                    </div>
+                                                    <span className={`text-[11px] font-bold px-2.5 py-0.5 rounded-full ${isFlipped ? 'bg-rose-100 text-rose-800' : 'bg-stone-100 text-stone-500'}`}>
+                                                        {isFlipped ? 'مفتوحة ❤️' : 'انقري للكشف 👆'}
+                                                    </span>
+                                                </div>
+
+                                                <h3 className="font-display font-bold text-lg text-stone-900 mb-1">
+                                                    {card.frontTitle}
+                                                </h3>
+
+                                                {/* Tunisian Quote Accent */}
+                                                <p className="text-xs font-semibold text-rose-600/90 mb-3 italic">
+                                                    "{card.tunisianWord}"
+                                                </p>
+
+                                                {/* Message body */}
+                                                {isFlipped ? (
+                                                    <motion.p
+                                                        initial={{ opacity: 0 }}
+                                                        animate={{ opacity: 1 }}
+                                                        className="text-stone-700 text-sm leading-relaxed font-medium bg-white/70 p-3 rounded-xl border border-rose-100"
+                                                    >
+                                                        {card.fullMessage}
+                                                    </motion.p>
+                                                ) : (
+                                                    <p className="text-stone-500 text-sm">
+                                                        {card.frontSubtitle}
+                                                    </p>
+                                                )}
+                                            </div>
+
+                                            {/* Card Footer Hint */}
+                                            <div className="pt-4 mt-2 flex items-center justify-between text-xs text-stone-400 border-t border-stone-100">
+                                                <span>{isFlipped ? 'اضغطي للإغلاق' : 'اضغطي لقراءة المشاعر'}</span>
+                                                <Icons.Heart className={`w-4 h-4 ${isFlipped ? 'text-rose-500 fill-rose-500' : 'text-stone-300'}`} />
+                                            </div>
+                                        </motion.div>
+                                    );
+                                })}
+                            </div>
+                        </section>
+
+                        {/* ========================================================
+                SECTION: "معرض الذكريات" (Memory Gallery)
+            ======================================================== */}
+                        <section className="py-16 px-4 max-w-5xl mx-auto">
+                            <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+                                <div>
+                                    <div className="inline-flex items-center gap-2 text-rose-600 bg-rose-50 px-3.5 py-1 rounded-full text-xs font-bold border border-rose-200 mb-2">
+                                        <Icons.Sparkles className="w-3.5 h-3.5 text-rose-500" />
+                                        <span>ذكرياتنا الحلوة معاً</span>
+                                    </div>
+                                    <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-stone-900">
+                                        معرض الضحكات واللحظات اللي ما تتنساش 📸
+                                    </h2>
+                                    <p className="text-stone-600 text-sm max-w-lg mt-1">
+                                        صور تذكرنا بالأيام الزاهية، وبإمكانك أيضاً رفع أي صورة تحبيها من ذكرياتنا اليوم!
+                                    </p>
+                                </div>
+
+                                {/* Upload Your Own Real Photo Button */}
+                                <label className="cursor-pointer inline-flex items-center gap-2 bg-white hover:bg-rose-50 text-rose-600 font-bold px-4 py-2.5 rounded-2xl border border-rose-300 shadow-xs transition hover:shadow-sm text-sm self-start md:self-auto">
+                                    <Icons.Upload className="w-4 h-4" />
+                                    <span>أضيفي صورة لذكرانا اليوم</span>
+                                    <input type="file" accept="image/*" className="hidden" onChange={handleImageUpload} />
+                                </label>
+                            </div>
+
+                            {/* Gallery Grid */}
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                                {galleryImages.map((img) => (
+                                    <motion.div
+                                        key={img.id}
+                                        whileHover={{ y: -6 }}
+                                        onClick={() => setSelectedGalleryImg(img)}
+                                        className="group cursor-pointer bg-white p-3 rounded-3xl border border-stone-200/80 shadow-sm hover:shadow-xl hover:shadow-rose-500/10 transition-all overflow-hidden flex flex-col"
+                                    >
+                                        <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-stone-100 mb-3">
+                                            <img
+                                                src={img.url}
+                                                alt={img.title}
+                                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                                loading="lazy"
+                                            />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-stone-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-3">
+                                                <span className="text-white text-xs font-semibold flex items-center gap-1">
+                                                    <Icons.Sparkles className="w-3.5 h-3.5 text-amber-300" />
+                                                    تكبير الصورة
+                                                </span>
+                                            </div>
+                                            <span className="absolute top-2 right-2 bg-white/90 backdrop-blur-md text-stone-800 text-[11px] font-bold px-2.5 py-0.5 rounded-full shadow-xs">
+                                                {img.tag}
+                                            </span>
+                                        </div>
+
+                                        <h4 className="font-display font-semibold text-stone-800 text-sm truncate px-1">
+                                            {img.title}
+                                        </h4>
+                                    </motion.div>
+                                ))}
+                            </div>
+                        </section>
+
+                        {/* ========================================================
+                SECTION: "الرسالة الكبرى والمفاجأة" (Final Love Letter & Prize)
+            ======================================================== */}
+                        <section className="py-20 px-4 max-w-4xl mx-auto">
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.7 }}
+                                className="relative bg-gradient-to-br from-white via-[#fff9f6] to-[#fff3ed] rounded-3xl md:rounded-[40px] p-8 sm:p-12 md:p-16 border-2 border-rose-200 shadow-2xl shadow-rose-900/5 overflow-hidden text-center"
+                            >
+                                {/* Decorative Floral Ornaments */}
+                                <div className="absolute top-0 right-0 transform translate-x-8 -translate-y-8 w-44 h-44 bg-rose-200/40 rounded-full blur-2xl pointer-events-none"></div>
+                                <div className="absolute bottom-0 left-0 transform -translate-x-8 translate-y-8 w-44 h-44 bg-amber-200/40 rounded-full blur-2xl pointer-events-none"></div>
+
+                                {/* Wax Seal / Royal Badge */}
+                                <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-br from-rose-600 to-amber-600 text-white flex items-center justify-center shadow-lg shadow-rose-600/30 border-4 border-white">
+                                    <Icons.Crown className="w-8 h-8" />
+                                </div>
+
+                                <div className="space-y-4 max-w-2xl mx-auto">
+                                    <span className="text-xs font-bold uppercase tracking-widest text-rose-600">رسالة شخصية وأبدية</span>
+                                    <h2 className="font-display font-extrabold text-2xl sm:text-4xl md:text-5xl text-stone-900 leading-tight">
+                                        إلى أختي، وقطعة من روحي وسرّ فرحتي ❤️
+                                    </h2>
+
+                                    {/* Letter Body in Beautiful Arabic Calligraphic Style */}
+                                    <div className="font-serif text-lg sm:text-2xl text-stone-700 leading-relaxed space-y-4 py-4 border-y border-rose-100/90 text-right md:text-justify">
+                                        <p>
+                                            مهما حاولت نكتب كلمات وننسج عبارات امتنان، مستحيل نوفيك حقك على وقفتك، وتعبك، وحنيتك الكبيرة معايا اليوم.
+                                        </p>
+                                        <p>
+                                            الأخوّة الصادقة مش مجرد كلام، هي أفعال... وإنتِ اليوم أثبتيلي للمرة الألف إنك أحسن وأعظم أخت ينجم أي إنسان يتمناها ويفخر بيها في حياتو.
+                                        </p>
+                                        <p className="font-bold text-rose-800">
+                                            شكراً على وقتك، شكراً على وسع بالك، شكراً على كل ابتماسة شجعتني، ودمتِ لي سنداً، وفرحاً، وأماناً لا ينتهي. ربي يفضلك ليا ويحفظك من كل مكروه.
+                                        </p>
+                                    </div>
+
+                                    {/* Tunisian Signature */}
+                                    <div className="pt-2 text-stone-500 font-sans text-sm">
+                                        — خوك / أختك اللي يحبك برشا ومستعد يفديك بعينيه ❤️
+                                    </div>
+
+                                    {/* Grand Surprise Button */}
+                                    <div className="pt-6">
+                                        <button
+                                            onClick={() => {
+                                                setShowSurpriseModal(true);
+                                                launchConfetti();
+                                            }}
+                                            className="group relative inline-flex items-center justify-center gap-3 bg-gradient-to-r from-amber-500 via-rose-500 to-rose-600 hover:from-amber-600 hover:to-rose-700 text-white font-display font-bold text-lg sm:text-xl px-8 sm:px-12 py-5 rounded-2xl shadow-xl shadow-rose-500/30 transition-all transform hover:scale-105 active:scale-95"
+                                        >
+                                            <Icons.Gift className="w-7 h-7 animate-bounce" />
+                                            <span>اضغطي هنا لاستلام استراحتك وتكريمك المستحق 🎁</span>
+                                        </button>
+                                        <p className="text-xs text-stone-400 mt-2">
+                                            مفاجأة وقسيمة دلال خاصة بانتظارك!
+                                        </p>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        </section>
+
+                    </main>
+
+                    {/* ========================================================
+              FOOTER
+          ======================================================== */}
+                    <footer className="py-12 border-t border-rose-100/80 text-center text-stone-500 text-sm relative z-10">
+                        <div className="max-w-md mx-auto px-4 space-y-3">
+                            <div className="flex items-center justify-center gap-2 text-rose-600 font-bold">
+                                <Icons.Heart className="w-5 h-5 fill-rose-500" />
+                                <span>صُنِع بكل حب لأغلى أخت</span>
+                                <Icons.Heart className="w-5 h-5 fill-rose-500" />
+                            </div>
+                            <p className="text-xs text-stone-400">
+                                ربي يخلينا لبعضنا وما يفرقناش أبد الدهر • {new Date().getFullYear()}
+                            </p>
+                        </div>
+                    </footer>
+
+                    {/* ========================================================
+              MODAL: Grand Surprise & VIP Rest Certificate
+          ======================================================== */}
+                    <AnimatePresence>
+                        {showSurpriseModal && (
+                            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-900/60 backdrop-blur-md">
+                                <motion.div
+                                    initial={{ opacity: 0, scale: 0.85, y: 20 }}
+                                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                                    exit={{ opacity: 0, scale: 0.85, y: 20 }}
+                                    className="bg-white rounded-3xl p-6 sm:p-10 max-w-xl w-full border-4 border-amber-300 shadow-2xl relative overflow-hidden text-center"
+                                >
+                                    {/* Close button */}
+                                    <button
+                                        onClick={() => setShowSurpriseModal(false)}
+                                        className="absolute top-4 left-4 p-2 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-600 transition"
+                                    >
+                                        <Icons.X className="w-5 h-5" />
+                                    </button>
+
+                                    <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-tr from-amber-400 to-rose-500 text-white flex items-center justify-center shadow-lg mb-4 animate-float-slow">
+                                        <Icons.Award className="w-10 h-10" />
+                                    </div>
+
+                                    <span className="text-xs font-bold text-amber-600 bg-amber-100 px-3 py-1 rounded-full border border-amber-200">
+                                        وثيقة التكريم الرسمية 📜
+                                    </span>
+
+                                    <h3 className="font-display font-extrabold text-2xl sm:text-3xl text-stone-900 mt-3 mb-2">
+                                        قسيمة دلال واستراحة VIP لأغلى أخت! 👑
+                                    </h3>
+
+                                    <p className="text-stone-600 text-sm sm:text-base leading-relaxed mb-6">
+                                        بموجب هذه الوثيقة، يُمنع عليكِ منعاً باتاً القيام بأي مجهود أو تعب لباقي هذا اليوم، ولكِ الحق الكامل في:
+                                    </p>
+
+                                    {/* Rewards List */}
+                                    <div className="bg-amber-50/70 border border-amber-200 rounded-2xl p-4 text-right space-y-3 mb-6 font-medium text-sm text-stone-800">
+                                        <div className="flex items-center gap-3">
+                                            <span className="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs shrink-0">✓</span>
+                                            <span>قهوة / عصير فاخر يجيكِ حتى يديك مع حلوكِ المفضل ☕🍰</span>
+                                        </div>
+                                        <div className="flex items-center gap-3">
+                                            <span className="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs shrink-0">✓</span>
+                                            <span>عشاء أو فطور من اختيارك وعلى حسابي الخاص 🍕✨</span>
+                                        </div>
+                                        <div className="flex items-center gap-3">
+                                            <span className="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs shrink-0">✓</span>
+                                            <span>إعفاء تام من أي طلبات أو شؤون منزلية طوال اليوم 🛋️</span>
+                                        </div>
+                                        <div className="flex items-center gap-3">
+                                            <span className="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs shrink-0">✓</span>
+                                            <span>دعوة صادقة من القلب وحب أبدي لا يفنى ❤️</span>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                                        <button
+                                            onClick={() => {
+                                                launchConfetti();
+                                                alert("تم تفعيل القسيمة بنجاح! اطلبي وتمني وأنا في الخدمة يا أغلى أخت ❤️");
+                                            }}
+                                            className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-rose-600 to-amber-500 text-white font-bold px-6 py-3.5 rounded-xl shadow-md hover:shadow-lg transition transform hover:-translate-y-0.5"
+                                        >
+                                            <Icons.Check className="w-5 h-5" />
+                                            <span>تفعيل القسيمة واستلام الدلال 🎁</span>
+                                        </button>
+                                        <button
+                                            onClick={() => window.print()}
+                                            className="inline-flex items-center justify-center gap-2 bg-stone-100 hover:bg-stone-200 text-stone-700 font-bold px-5 py-3.5 rounded-xl transition"
+                                        >
+                                            <span>حفظ كذكرى (طباعة) 🖨️</span>
+                                        </button>
+                                    </div>
+                                </motion.div>
+                            </div>
+                        )}
+                    </AnimatePresence>
+
+                    {/* ========================================================
+              MODAL: Gallery Lightbox
+          ======================================================== */}
+                    <AnimatePresence>
+                        {selectedGalleryImg && (
+                            <div
+                                className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-950/80 backdrop-blur-md"
+                                onClick={() => setSelectedGalleryImg(null)}
+                            >
+                                <motion.div
+                                    initial={{ opacity: 0, scale: 0.9 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    exit={{ opacity: 0, scale: 0.9 }}
+                                    onClick={(e) => e.stopPropagation()}
+                                    className="bg-white rounded-3xl p-4 max-w-2xl w-full overflow-hidden shadow-2xl relative"
+                                >
+                                    <button
+                                        onClick={() => setSelectedGalleryImg(null)}
+                                        className="absolute top-6 left-6 p-2 rounded-full bg-stone-900/60 text-white hover:bg-stone-900 transition z-10"
+                                    >
+                                        <Icons.X className="w-5 h-5" />
+                                    </button>
+
+                                    <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-stone-100 mb-4">
+                                        <img
+                                            src={selectedGalleryImg.url}
+                                            alt={selectedGalleryImg.title}
+                                            className="w-full h-full object-cover"
+                                        />
+                                    </div>
+
+                                    <div className="p-2 flex items-center justify-between">
+                                        <div>
+                                            <span className="text-xs font-bold text-rose-600 bg-rose-50 px-2.5 py-0.5 rounded-full border border-rose-200">
+                                                {selectedGalleryImg.tag}
+                                            </span>
+                                            <h3 className="font-display font-bold text-lg text-stone-900 mt-1">
+                                                {selectedGalleryImg.title}
+                                            </h3>
+                                        </div>
+                                        <button
+                                            onClick={(e) => triggerHeartBurst(e)}
+                                            className="p-3 rounded-full bg-rose-50 text-rose-600 hover:bg-rose-100 transition"
+                                        >
+                                            <Icons.Heart className="w-6 h-6 fill-rose-500" />
+                                        </button>
+                                    </div>
+                                </motion.div>
+                            </div>
+                        )}
+                    </AnimatePresence>
+
                 </div>
-                <h3 className="font-bold text-plum text-lg mb-2">{card.title}</h3>
-                <p className="text-plum/60 leading-loose text-sm">{card.text}</p>
-              </motion.div>
             );
-          })}
-        </div>
-      </section>
+        }
 
-      <section className="py-24 px-6 bg-gradient-to-b from-cream to-rose-50">
-        <SectionHeading
-          title="رسائل شكر خاصة"
-          subtitle="اضغطي على كل بطاقة باش تلقاي كلمة صغيرة من قلبي ليك"
-        />
-        <div className="max-w-4xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {thankYouMessages.map((msg, i) => (
-            <ThankYouCard key={i} message={msg} index={i} />
-          ))}
-        </div>
-      </section>
-
-      <section className="py-24 px-6 bg-rose-50">
-        <SectionHeading
-          title="ذكرياتنا سوا"
-          subtitle="كل صورة هوني عندها حكاية، وكل حكاية زادتنا قرب لبعضنا"
-        />
-        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-5">
-          {galleryItems.map((item, i) => (
-            <motion.div
-              key={item.caption}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.5, delay: i * 0.06 }}
-              whileHover={{ y: -4 }}
-              className={`aspect-square rounded-2xl bg-gradient-to-br ${item.from} ${item.to} flex flex-col items-center justify-center gap-3 p-4 text-center shadow-sm`}
-            >
-              <ImageIcon className="w-9 h-9 text-white/80" />
-              <p className="text-plum/70 text-sm font-medium">{item.caption}</p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      <section className="relative py-28 px-6 bg-gradient-to-b from-rose-50 to-rose-100 overflow-hidden">
-        <div className="absolute top-10 left-1/2 -translate-x-1/2 w-96 h-96 rounded-full bg-amber-200/30 blur-3xl" />
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.7 }}
-          className="relative z-10 max-w-2xl mx-auto text-center"
-        >
-          <Sun className="w-10 h-10 text-amber-400 mx-auto mb-6" />
-          <h2 className="font-display text-4xl md:text-5xl text-rose-600 mb-8 leading-relaxed">
-            كلمة أخيرة من قلبي ليك
-          </h2>
-          <p className="text-plum/80 text-lg leading-loose mb-6">
-            في وسط كل يوم عادي، إنتِ عندك القدرة تحوليه لشيء أحسن، بلا ما
-            تطلبي حتى شكر. اليوم بالذات، شفتك تعطي من وقتك، من جهدك، ومن
-            صبرك، بلا ما تحسبي التعب.
-          </p>
-          <p className="text-plum/80 text-lg leading-loose mb-10">
-            نحب نقلك: ما نتيش لحدك، وما تعبتيش باطل. كل حاجة عملتيها اليوم
-            محفورة فينا، ونحبك أكثر من قداه نقدر نعبرلك بيه بالكلام.
-          </p>
-
-          {!surprise ? (
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={launchSurprise}
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-rose-500 to-amber-400 text-white font-medium text-lg px-8 py-4 rounded-full shadow-lg shadow-rose-300"
-            >
-              <Gift className="w-5 h-5" />
-              اضغطي هنا لاستلام استراحتك وتكريمك المستحق
-            </motion.button>
-          ) : (
-            <motion.div
-              initial={{ opacity: 0, scale: 0.85, y: 16 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              className="bg-white rounded-3xl border border-rose-200 shadow-lg p-8 md:p-10 text-center"
-            >
-              <Sparkles className="w-9 h-9 text-amber-400 mx-auto mb-4" />
-              <h3 className="font-display text-3xl text-rose-600 mb-4">
-                مبروك، استراحتك بدات رسمياً
-              </h3>
-              <p className="text-plum/80 leading-loose text-lg mb-2">
-                من الآن، عندك إذن رسمي تريّحي: تلفزة، شكولاطة، وصفر مسؤوليات
-                لمدة 24 ساعة كاملة.
-              </p>
-              <p className="text-plum/80 leading-loose text-lg">
-                ونتي، على فكرة، أحلى وأغلى أخت ممكن حد يتمناها في الدنيا كلها.
-              </p>
-              <p className="font-display text-2xl text-rose-500 mt-6">
-                أختك اللي تحبك بجنون
-              </p>
-            </motion.div>
-          )}
-        </motion.div>
-      </section>
-
-      <footer className="py-10 text-center text-plum/40 text-sm bg-rose-100">
-        صنع بكل حب من أجلك، لأنك تستاهلي أكثر بكثير من صفحة ويب
-      </footer>
-    </div>
-  );
-}
-
-const root = createRoot(document.getElementById("root"));
-root.render(<App />);
-</script>
-
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
 </body>
+
 </html>
